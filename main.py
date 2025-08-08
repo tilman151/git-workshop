@@ -3,4 +3,5 @@ def main():
 
 
 if __name__ == "__main__":
+    # Execute main function
     main()
