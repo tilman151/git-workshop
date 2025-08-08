@@ -14,7 +14,7 @@ def fibonacci(n: int) -> List[int]:
     if n < 0:
         raise ValueError("n must be non-negative")
     seq: List[int] = []
-    a, b = 0, 1
+    a, b = 1, 1
     for _ in range(n):
         seq.append(a)
         a, b = b, a + b
