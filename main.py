@@ -17,6 +17,31 @@ def primes_smaller_than(n: int) -> List[int]:
     raise NotImplementedError("Prime number calculation not yet implemented")
 
 
+def is_prime(num: int) -> bool:
+    """
+    Check if a number is prime.
+    num must be a positive integer.
+    Examples:
+      num=2 -> True
+      num=4 -> False
+      num=17 -> True
+    """
+    if num < 2:
+        return False
+    if num == 2:
+        return True
+    if num % 2 == 0:
+        return False
+
+    # Check odd divisors up to sqrt(num)
+    i = 3
+    while i * i <= num:
+        if num % i == 0:
+            return False
+        i += 2
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate prime numbers smaller than n.")
     parser.add_argument(
